@@ -1,0 +1,67 @@
+<head>
+    <!-- puxando arquivo js -->
+    <script src="/js/tela-add-files.js"></script>
+
+    <!-- definindo novo titulo para a pagina -->
+    <title>Adicionar Arquivos</title>
+</head>
+<body class="body-add-files">
+
+    <!-- inserindo o header -->
+    <div id="header">
+        <%- include('../partials/header'); %>
+    </div>
+
+    <!-- div que define o grid de 12 colunas-->
+    <div class="campos">
+
+        <!-- div que contem o formulario -->
+        <div id="form-container" class="form-container">
+            <div class="div-titulo-arquivos">
+                <h1 class="titulo-adicionar-arquivos">Adicionar arquivos relacionados ao manual: <%= manual.names %> </h1> 
+            </div>
+            <!-- form para adicionar o primeiro arquivo -->
+            <form id="form-adicionar-arquivo1" action="/repositorio/manual/files/create" method="POST">
+
+                <input type="hidden" id="manuals_id" name="manuals_id" value="<%= manual.id %>">
+
+                <input id="names" type="text" placeholder="Escreva do arquivo" name="names" required>
+
+                <select id="tipo" name="types" required>
+                    <!-- placeholder -->
+                    <option value="">Escolha o tipo do arquivo</option>
+                    <option value="PDF">PDF</option>
+                    <option value="Video">Vídeo</option>
+                    <option value="Imagem">Imagem</option>
+                    <option value="XML">XML</option>
+                </select>
+
+                <!-- div que deixa o input e os botoes em flex -->
+                <div class="div-adicionar-url">
+                    <input id="URL" type="text" placeholder="Adicione aqui a URL do Arquivo" name="url" required>
+                    <!-- deleta o arquivo: "funciona" como um formulario -->
+                    <button type="submit" disabled class="button pequeno" id="lixeira"><img src="/lixeira-branca.png" alt="Ícone de enviar arquivo"></button>
+                    <!-- manda o arquivo para o banco de dados -->
+                    <button type="submit" class="button pequeno" id="enviar"><img src="/check-branco.png" alt="Ícone de jogar arquivo fora"></button>
+                </div>
+
+
+            </form>
+
+            <!-- botao que gera mais um form de arquivo -->
+            <button id="botao-adicionar-arquivos" class="adicionar-div" type="button">Aperte para adicionar mais arquivos</button>
+            
+            <!-- botao que finaliza o processo de adicionar arquivos -->
+            <div id="div-botoes-files" class="botoes">
+                <button class="button" id="voltar-manual">Voltar</button>
+                <button id="finalizar" class="button"  type="submit">Finalizar</button>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        // Expondo a variável no escopo global
+        window.userId = "<%= user %>";
+        window.manualId = "<%= manual.id %>";
+    </script>
+</body>

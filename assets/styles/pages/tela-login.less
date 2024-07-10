@@ -1,0 +1,118 @@
+.body-login {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  /* Ensure body takes up full viewport height */
+  flex-direction: column;
+  overflow-x: hidden;
+
+  .login-header {
+    padding-bottom: 15vh;
+  }
+
+  .background-login {
+    display: grid;
+    margin: 2vh 0;
+    width: 100vw;
+    grid-template-columns: 1fr 10fr 1fr;
+    grid-template-areas: ". login .";
+    align-items: center;
+    justify-content: center;
+  }
+
+  .login-container {
+    grid-area: login;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6vh;
+    width: 80vw;
+    height: 60vh;
+    box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.1), -2px 2px 4px rgba(0, 0, 0, 0.06);
+    background-color: #FFFFFF;
+  }
+
+  .login-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+  }
+
+  .login-container form .titulo {
+    display: flex;
+    align-items: flex-start;
+    padding: 0;
+    width: 100%;
+  }
+
+  .titulo-login {
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 0;
+  }
+
+  .login-container .form-group {
+    width: 100%;
+    margin-bottom: 20px;
+    position:relative
+  }
+
+  .toggle-password {
+    position: absolute;
+    right: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    width: 1.6vw;
+    opacity: 0.6;
+    cursor: pointer;
+  }
+
+  .login-container .username,
+  .login-container .password {
+    border: 1px solid #070707;
+    background: #FFF;
+    box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.1), -2px 2px 4px rgba(0, 0, 0, 0.06);
+    height: 40px;
+    width: 100%;
+    padding: 10px;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: left;
+    color: #000;
+    margin: 0 10px;
+  }
+
+  .div-botao {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .div-botao .botao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 10vw;
+    /* 30% da largura da viewport */
+    min-width: 120px;
+    height: 4vh;
+    /* 8% da altura da viewport */
+    min-height: 36px;
+    border: 1px solid #070707;
+    background: #0672CB;
+    box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.1), -2px 2px 4px rgba(0, 0, 0, 0.06);
+    color: #FFF;
+    font-size: 15px;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 17px;
+    cursor: pointer;
+    overflow-y: hidden;
+  }
+
+}

@@ -1,0 +1,65 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Kanban</title>
+    <link rel="icon" href="/favicon.ico">
+
+</head>
+
+
+<body class="body-kanban">
+    <script src="/js/tela-kanban.js"></script>
+    <div id="header">
+        <%- include('../partials/header'); %>
+    </div>
+    <main>
+        <div class="pendencias">
+            <h1 id="title">Meu Kanban</h1>
+            <div class="kanban-container">
+                <div class='column' id='kanban-a-fazer'>
+
+                    <div class="column-header">
+                        <p>A Fazer</p>
+                    </div>
+
+                    <div id="tasks-fazer">
+
+                    </div>
+
+                </div>
+
+                <div class='column' id="kanban-fazendo">
+
+                    <div class="column-header">
+                        <p>Fazendo</p>
+                    </div>
+
+                    <div id="tasks-fazendo">
+
+                    </div>
+
+                </div>
+
+
+                <div class='column' id="kanban-feito">
+
+                    <div class="column-header">
+                        <p>Feito</p>
+                    </div>
+
+                    <div id="tasks-feitas">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main> 
+    <script>
+        //pegando a previousPage
+        localStorage.setItem('previousPage', window.location.href);
+        window.userId = "<%= req.params.userId %>";
+    </script>
+</body>
+
+</html>

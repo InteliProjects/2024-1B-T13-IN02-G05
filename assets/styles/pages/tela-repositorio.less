@@ -1,0 +1,232 @@
+//tela-repositorio-manuais - por João Cherry
+
+.body-repositorio {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    /* Ensure body takes up full viewport height */
+    display: flex;
+    flex-direction: column;
+  
+    /* Main content styling */
+    main {
+      display: flex;
+      padding: 8vh;
+      flex-grow: 1;
+      margin-top: 40px;
+      background-color: #f5f5f5;
+      position: relative;
+    }
+  
+    .sidebar {
+      width: 16vw;
+      min-width: 158px;
+      background-color: #ffffff;
+      padding: 20px;
+      margin-right: 20px;
+      border-radius: 5px;
+      height: fit-content;
+      align-items: flex-start;
+      box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.1), -2px 2px 4px rgba(0, 0, 0, 0.06);
+    }
+  
+    .sidebar ul {
+        list-style: none;
+        margin: 0; /* Remove a margem para alinhar à esquerda */
+        padding: 0;
+        margin-top: 10px
+    }
+  
+    .sidebar ul li {
+        font-size: 1rem;
+        margin-bottom: 10px;
+        display: flex; /* Usa flexbox para alinhar os itens */
+        align-items: center; /* Alinha verticalmente os itens */
+    }
+  
+    .sidebar label {
+        font-weight: bold;
+        font-size: 18px;
+        margin-left: 5px; /* Espaço entre o checkbox e o texto */
+    }
+  
+    /* Estilos adicionais para o checkbox */
+    .sidebar input[type="checkbox"] {
+        margin-right: 10px; /* Espaço entre o checkbox e o texto */
+    }
+    
+    .main-content {
+      width: 100%;
+      position: relative;
+    }
+    .content {
+      flex-grow: 1;
+      background-color: #ffffff;
+      padding: 10px;
+      border-radius: 5px;
+      height: 60vh;
+      box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.1), -2px 2px 4px rgba(0, 0, 0, 0.06);
+      /* Ensure content extends lower */
+    }
+  
+    .filter {
+      margin-bottom: 20px;
+    }
+  
+    .search-bar {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px
+    }
+  
+    .search-bar input[type="text"] {
+      flex-grow: 1;
+      padding: 10px;
+      margin-right: 10px;
+      border: 1px solid #cccccc;
+      border-radius: 5px;
+    }
+  
+    .results {
+      margin-bottom: 20px;
+      overflow-y: auto;
+      height: 52vh;
+    }
+  
+    .result-item {
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #CCCCCC;
+      /* Add a border-bottom */
+      padding-bottom: 10px;
+      /* Add padding to separate the profiles */
+  
+      .manual-container {
+        display: flex;
+        justify-content: space-between;
+        height: 8vh;
+
+        .manual-img-data {
+          display: flex;
+          flex-direction: row;
+          width: 80%;
+  
+          img {
+            width: 3vw;
+            margin-left: 2%;
+            margin-right: 3%;
+          }
+  
+          .manual-data {
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+
+            
+            .name {
+              font-weight: 400;
+              font-size: 1rem;
+              margin: 0 0 5px 0;
+            }
+    
+            .category {
+              font-weight: 350;
+              font-size: 1rem;
+              color: #666666;
+              margin:0;
+            }
+          }
+        }
+      }
+  
+      button.pequeno {
+        width: 5%;
+        height: 40px;
+      }
+
+      button.pequeno img {
+          max-width: 30px;
+      }
+
+      .button:hover {
+        background-color:#0063b8
+      }
+
+      button.button.pequeno.lixeira {
+        background-color:#EB5757
+      }
+
+      .button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-direction: row;
+        width: 10vw; /* 30% da largura da viewport */
+        height: 4vh; /* 8% da altura da viewport */
+        border: 1px solid #070707;
+        background: #0672CB;
+        box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.1), -2px 2px 4px rgba(0, 0, 0, 0.06);
+        color: #FFF;
+        font-size: 15px;
+        font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        padding: 17px;
+        cursor: pointer;
+      }
+
+      .manual-icon-div {
+        float: right;
+        display: flex;
+        width: 10%;
+        padding-left: 25px;
+        padding-top: 5px;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+    }
+  
+    /* Actions styling */
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      width: 92%;
+      margin-left: 4%;
+      margin-bottom: 20px;
+    }
+    
+    .actions button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 10vw; /* 30% da largura da viewport */
+      min-width: 160px;
+      height: 4vh; /* 8% da altura da viewport */
+      border: 1px solid #070707;
+      background: #0672CB;
+      box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.1), -2px 2px 4px rgba(0, 0, 0, 0.06);
+      color: #FFF;
+      font-size: 1rem;
+      font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      padding: 17px;
+      cursor: pointer;
+    }
+
+    .actions a {
+        text-decoration: none;
+    }
+  
+  
+    .actions button:hover {
+      background-color: #0063b8;
+    }
+  
+    .footer {
+      margin-top: 20px;
+    }
+}

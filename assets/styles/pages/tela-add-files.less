@@ -1,0 +1,135 @@
+// tela-add-files.less
+
+.body-add-files{
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    /* Ensure body takes up full viewport height */
+    flex-direction: column;
+
+    //definindo o estado de deabilitado dos campos
+    input:disabled, .button:disabled  {
+        background-color: #f0f0f0; 
+        color: #999;
+        border: 1px solid #ccc;
+        cursor: not-allowed; 
+      }
+    
+    .button:disabled:hover {
+      background-color: #f0f0f0;
+    }
+    
+    .titulo-adicionar-arquivos {
+        margin-top: 100px;
+        margin-bottom: 30px; 
+        color: #000000;
+        font-size: 24px;
+        font-weight: 700;
+    }
+    
+    .div-titulo-arquivos {
+        display: flex;
+        align-items: flex-start;
+    }
+    
+    // Trabalhando com grid
+    .campos {
+        display: grid; //comando para que o conteudo fique em grid
+        margin: auto;
+        min-width: 320px;
+        grid-template-columns: 1fr 10fr 1fr; //grid de 12 colunas
+        grid-template-areas: ". form ." ; //area ocupada chama form
+    }
+    
+    .form-container {
+        grid-area: form;  
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
+    
+    .form-container form {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 40px
+    }
+    
+    //configuracoes gerais de inputs do formulario
+    .form-container form input, .form-container form select, .adicionar-div{
+        border: 1px solid #070707;
+        background: #FFF;
+        box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.1), -2px 2px 4px rgba(0, 0, 0, 0.06);
+        height: 40px;
+        margin-bottom: 20px;
+        padding-left: 5px;
+    }
+    
+    .form-container form input::placeholder {
+        text-align: left;
+        color: #C1C1C1;
+        margin-right: 10px;
+    }
+    
+    .adicionar-div {
+        background-color: #0672cc;
+        text-align: center;
+        color: #FFF;
+        cursor: pointer;
+        border: none;
+        border-radius: 2px;
+        font-weight: bold;
+    }
+    
+    
+    //definindo o estado de hover dos botoes
+    .adicionar-div:hover, .button:hover {
+        background-color:#0063b8
+    }
+    
+    #botao-adicionar-arquivos {
+        margin-bottom: 50px;
+    }
+    
+    .div-adicionar-url {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    #URL {
+        width: 85%;
+    }
+    
+    button.pequeno {
+        width: 5%;
+        height: 40px;
+    }
+    
+    button.pequeno img {
+        max-width: 30px;
+    }
+    
+    //estilizacao da div de finalizar
+    #div-botoes-files {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    //estilizacao de botoes
+    .button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 10vw; /* 30% da largura da viewport */
+        height: 4vh; /* 8% da altura da viewport */
+        border: 1px solid #070707;
+        background: #0672CB;
+        box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.1), -2px 2px 4px rgba(0, 0, 0, 0.06);
+        color: #FFF;
+        font-size: 15px;
+        font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        padding: 17px;
+        cursor: pointer;
+    }
+}

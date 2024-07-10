@@ -1,0 +1,52 @@
+<head>
+    <title>Atualizar Manual</title>
+    <link rel="icon" href="favicon.ico">
+</head>
+<body class='body-atualizar-manual'>
+    <!-- div do header -->
+    <div id="header">
+        <%- include('../partials/header', { currentPage: currentPage }); %>
+    </div>
+
+    <!-- div que define o grid de 12 -->
+    <div class="campos">
+
+        <!-- div que contem o formulario -->
+        <div id="form-container" class="form-container">
+            <h1 class="titulo-atualizar-manual">Atualizar Manual</h1>
+
+            <!-- form para adicionar o primeiro arquivo -->
+            <form id="form-atualizar-manual" action="/repositorio/manual/update/<%= manual.id %>" method="POST">
+                <!-- Adicionando um campo hidden para method-override -->
+                <input type="hidden" name="_method" value="PUT">
+
+                <input required id="names-atualizar" type="text" placeholder="Escreva o nome do manual" name="names">
+                <select id="categories-atualizar" name="categories" required>
+                    <!-- placeholder -->
+                    <option value="">Escolha a categoria do manual</option>
+                    
+                    <option value="Computadores">Computadores</option>
+                    <option value="Eletrônicos e Acessórios">Eletrônicos e Acessórios</option>
+                    <option value="Softwares e Soluções">Softwares e Soluções</option>
+                    <option value="Infraestrutura">Infraestrutura</option>
+                </select>
+                
+                <!-- botao que gera mais uma subcategoria -->
+                <button id="adicionar-subcategoria-atualizar" class="adicionar-div" type="button">Aperte para adicionar uma subcategoria</button>
+                
+                <textarea id="descricao-atualizar" type="text" placeholder="Descreva as mudanças que você irá realizar" name="update_descriptions" required></textarea>
+
+                <div id="div-botoes-atualizar" class="botoes">
+                    <button class="button" type="button" id="voltar-repositorio-atualizar">Voltar</button>
+                    <button class="button" type="submit" id="enviar-atualizar">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+        window.userId = "<%= req.params.userId %>";
+        window.manualId = "<%= manual.id %>";
+    </script>
+</body>

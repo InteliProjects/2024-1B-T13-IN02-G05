@@ -1,0 +1,206 @@
+// delegations.less - por Tiago 'Titi' dos Santos
+
+.body-delegations {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  /* Ensure body takes up full viewport height */
+  flex-direction: column;
+
+
+  /* Main content styling */
+  main {
+    display: flex;
+    padding: 8vh;
+    flex-grow: 1;
+    margin-top: 40px;
+    background-color: #f5f5f5;
+    position: relative;
+  }
+
+  .sidebar {
+    width: 12vw;
+    min-width: 132px;
+    background-color: #ffffff;
+    padding: 2vh 1vw;
+    margin-right: 4vw;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    height: fit-content;
+    align-items: flex-start;
+    box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.1), -2px 2px 4px rgba(0, 0, 0, 0.06);
+  }
+
+  .sidebar ul {
+      list-style: none;
+      margin: 0; /* Remove a margem para alinhar à esquerda */
+      padding: 0;
+      margin-top: 2vh;
+  }
+
+  .sidebar ul li {
+      margin-bottom: 2vh;
+      display: flex; /* Usa flexbox para alinhar os itens */
+      align-items: center; /* Alinha verticalmente os itens */
+  }
+
+  .sidebar label {
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-left: 1vw; /* Espaço entre o checkbox e o texto */
+  }
+
+  /* Estilos adicionais para o checkbox */
+  .sidebar input[type="checkbox"] {
+      margin-right: 0.8vw; /* Espaço entre o checkbox e o texto */
+  }
+
+  .manual-select-div select {
+    background: #FFF;
+    box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.1), -2px 2px 4px rgba(0, 0, 0, 0.06);
+    height: 40px;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 0 2vw;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border: 1px solid #cccccc;
+    border-radius: 2px;
+  }
+  
+  .main-content {
+    width: 100%;
+    position: relative;
+  }
+  .content {
+    flex-grow: 1;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    height: 60vh;
+    box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.1), -2px 2px 4px rgba(0, 0, 0, 0.06);
+  }
+
+  .filter {
+    margin-bottom: 2vh;
+  }
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2vh;
+  }
+
+  .search-bar input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+  }
+
+  .results {
+    margin-bottom: 20px;
+    overflow-y: auto;
+    height: 52vh;
+  }
+
+  .result-item {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #CCCCCC;
+    /* Add a border-bottom */
+    padding-bottom: 10px;
+    /* Add padding to separate the profiles */
+
+    .worker-container {
+      display: flex;
+      justify-content: space-between;
+      
+      height: 8vh;
+
+      .worker-img-data {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+
+        img {
+          width: 3vw;
+          margin-right: 3%;
+        }
+  
+        .worker-data {
+          position: relative;
+          bottom: 0;
+          width: 80%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+  
+          .worker-name p{
+            font-weight: 450;
+            font-size: 1rem;
+            margin-top: 2rem;
+          }
+  
+          .worker-role p {
+            margin-top: -0.5rem;
+            font-weight: 325;
+            font-size: 1rem;
+            color: #666666;
+          }
+        }
+      }
+    }
+
+    .worker-checkbox-div {
+      float: right;
+    }
+
+    .worker-checkbox {
+      width: 6vw;
+      height: 6vh;
+    }
+
+  }
+
+  /* Actions styling */
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    width: 92%;
+    margin-left: 4%;
+    margin-bottom: 20px;
+  }
+  
+  .actions button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 10vw; /* 30% da largura da viewport */
+    min-width: 160px;
+    height: 4vh; /* 8% da altura da viewport */
+    border: 1px solid #070707;
+    background: #0672CB;
+    box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.1), -2px 2px 4px rgba(0, 0, 0, 0.06);
+    color: #FFF;
+    font-size: 1rem;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 17px;
+    cursor: pointer;
+  }
+
+
+  .actions button:hover {
+    background-color: #0063b8;
+  }
+
+  .footer {
+    margin-top: 20px;
+  }
+}

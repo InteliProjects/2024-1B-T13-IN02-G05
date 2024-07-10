@@ -1,0 +1,224 @@
+
+.body-kanban{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    height: 60vh;
+    /* Ensure body takes up full viewport height */
+    flex-direction: column;   
+
+    main {
+        display: grid;
+        width: 100%;
+        margin: 6vw auto;
+        min-width: 320px;
+        grid-template-columns: 1fr 10fr 1fr; //grid de 12 colunas
+        grid-template-areas: ". pendencias ." ;
+    }
+
+    .pendencias {
+        grid-area: pendencias;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        background-color: #f5f6f8;
+
+        #title {
+            color: #000000;
+            font-size: 30px;
+            font-weight: 700;
+            font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            padding-bottom: 2%;
+        }
+
+
+        .kanban-container {
+            display: flex;
+            height: 70%;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+    }
+        
+    .column {
+        background-color: #FFF;
+        padding: 10px;
+        width: 30%;
+        height: 100%;
+        box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.1), -2px 2px 4px rgba(0, 0, 0, 0.06);
+        border: 0.5px solid #070707;
+        overflow-y: scroll;
+    
+        .column-header {
+            color: #636363;;
+            font-size: 25px;
+            text-align: center;
+            margin-top: 20px;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        
+        .task {
+            background-color: #1282D6;
+            border: 0.5px solid #ccc;
+            margin-top: 50px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            padding: 10px;
+            height: 80px;
+            width: 90%;
+            box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.1), -2px 2px 4px rgba(0, 0, 0, 0.06);
+            border: 0.5px solid #070707;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            cursor:pointer;
+
+            .img-manual {
+                width: 50px;  /* Largura do ícone */
+                height: 50px; /* Altura do ícone */
+                color: black;
+                align-self: center;
+                margin-right: 20px;
+            }
+
+            .div-nome-categoria {
+                display: flex;
+                flex-direction: column;
+                font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                text-align: left;
+                width: 100%;
+
+                .nome-manual{
+                    color: white; 
+                    font-weight: 400;
+                    /* border: 2px solid red; */
+                    font-size: 1rem;
+                    margin-bottom: 5px    
+                }
+    
+                .categoria-manual {
+                    color: white;
+                    font-size: 0.9rem;    
+                }
+            }
+
+
+        }
+        
+    }
+    
+    @media (max-width: 767px) {
+        main {
+            display: grid;
+            width: 100%;
+            margin: 6vh 3vw;
+            min-width: 320px;
+            grid-template-columns: 6fr; //grid de 6 colunas
+            grid-template-areas: "pendencias" ;
+        }
+    
+        .pendencias {
+            grid-area: pendencias;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            background-color: #f5f6f8;
+    
+            #title {
+                color: #000000;
+                font-size: 30px;
+                font-weight: 700;
+                font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                padding-bottom: 2%;
+            }
+    
+    
+            .kanban-container {
+                display: flex;
+                height: 70%;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 10px;
+            }
+    
+        }
+            
+        .column {
+            background-color: #FFF;
+            padding: 10px;
+            width: 90%;
+            height: 50vh;
+            box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.1), -2px 2px 4px rgba(0, 0, 0, 0.06);
+            border: 0.5px solid #070707;
+            overflow-y: scroll;
+        
+            .column-header {
+                color: #636363;;
+                font-size: 25px;
+                text-align: center;
+                margin-top: 20px;
+                font-weight: 600;
+                margin-top: 20px;
+            }
+    
+            
+            .task {
+                background-color: #1282D6;
+                border: 0.5px solid #ccc;
+                margin-top: 50px;
+                margin-bottom: 10px;
+                margin-left: 10px;
+                padding: 10px;
+                height: 80px;
+                width: 90%;
+                box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.1), -2px 2px 4px rgba(0, 0, 0, 0.06);
+                border: 0.5px solid #070707;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                cursor:pointer;
+    
+                .img-manual {
+                    width: 50px;  /* Largura do ícone */
+                    height: 50px; /* Altura do ícone */
+                    color: black;
+                    align-self: center;
+                    margin-right: 20px;
+                }
+    
+                .div-nome-categoria {
+                    display: flex;
+                    flex-direction: column;
+                    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                    text-align: left;
+                    width: 100%;
+    
+                    .nome-manual{
+                        color: white; 
+                        font-weight: 400;
+                        /* border: 2px solid red; */
+                        font-size: 1rem;
+                        margin-bottom: 5px    
+                    }
+        
+                    .categoria-manual {
+                        color: white;
+                        font-size: 0.9rem;    
+                    }
+                }
+    
+    
+            }
+            
+        }
+    }
+
+}

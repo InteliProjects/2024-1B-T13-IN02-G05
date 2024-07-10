@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delegação</title>
+</head>
+
+<body class='body-delegations'>
+    <div class='div-header'>
+        <%- include('../partials/header', { currentPage: currentPage }); %>
+    </div>
+    <main>
+        <div class="sidebar">
+            <label>Linhas</label>
+            <ul id="filtro-linhas">
+                
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <div class="manual-select-div">
+                <select id="manual-select">
+                    <option value='' class='manual-option'>Selecionar manual</option>
+                </select>
+            </div>
+
+            <div class="content" id="search">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Procurar">
+                    <input type="checkbox" id="selecionarTudo">
+                    <label for="Idcheckbox" class="checkbox-label">Selecionar Tudo</label>
+                </div>
+                <div id='resultsId' class="results">
+                    <!-- Espaço onde as linhas são dispostas -->
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <div class="actions">
+        <button class="back-button" onclick="navigateTo('localhost:1337/tela-engenheiro')">Voltar</button>
+        <button id='create-task' class="create-task-button">Criar Tarefa</button>
+    </div>
+
+    <script type="module">
+        import { navigateTo } from '../helpers/navigateTo.js'
+    </script>
+    <script>
+        window.engineerId = "<%= user.id %>";
+    </script>
+</body>

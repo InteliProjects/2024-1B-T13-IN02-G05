@@ -1,0 +1,46 @@
+/**
+ * importer.less
+ *
+ * By default, new Sails projects are configured to compile this file
+ * from LESS to CSS.  Unlike CSS files, LESS files are not compiled and
+ * included automatically unless they are imported below.
+ *
+ * For more information see:
+ *   https://sailsjs.com/anatomy/assets/styles/importer-less
+ */
+
+// For example:
+//
+// @import 'variables/colors.less';
+// @import 'mixins/foo.less';
+// @import 'mixins/bar.less';
+
+//partials
+@import 'partials/footer.less';
+@import 'partials/header.less';
+
+//Common pages for both Engineers and Workers
+@import 'pages/tela-login.less';
+@import 'pages/tela-manuais.less';
+
+//Pages for Engineers
+@import 'pages/dashboard-eng.less';
+@import 'pages/delegations.less';
+@import 'pages/tela-repositorio.less';
+@import 'pages/tela-add-manual.less';
+@import 'pages/tela-add-files.less';
+@import 'pages/tela-atualizar-manual.less';
+@import 'pages/tela-atualizar-files.less';
+
+
+//Pages for Workers
+@import 'pages/tela-kanban.less';
+
+//
+// @import 'mixins-and-variables.less';
+// @import 'pages/login.less';
+// @import 'pages/signup.less';
+//
+// etc.
+
+/*! This special bang (!) comment is here to trick the `hash` Grunt task into working out-of-the-box, without any real CSS. You can delete this once you've imported ≥1 .less file as demonstrated above. */

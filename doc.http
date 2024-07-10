@@ -1,0 +1,185 @@
+//---------------------- ROTAS ADM ----------------------
+//Engenheiros
+
+### Consulta todos os engenheiros
+GET http://localhost:1337/adm/engineer/
+Content-Type: application/json
+
+### Consulta o engenheiro por id
+GET http://localhost:1337/adm/engineer/2
+Content-Type: application/json
+
+
+### Cria um novo engenheiro
+POST http://localhost:1337/adm/engineer/create
+Content-Type: application/json
+
+  {
+	"registrations": "D2022.1324.001",
+	"names": "Gabriela Silva",
+	"emails": "pietra.batista@engenheiro.dell.com",
+	"passwords": "Pietra123*",
+	"birthdays": "1981-03-02"
+  }
+
+### Remove um engenheiro 
+DELETE http://localhost:1337/adm/engineer/5
+Content-Type: application/json
+
+### Atualiza um engenheiro
+PUT http://localhost:1337/adm/engineer/update/7
+Content-Type: application/json
+
+{
+	"names": "Vinicius Savian"
+}
+
+
+//Montadores
+
+### Consulta todos os workers
+GET http://localhost:1337/adm/worker/
+Content-Type: application/json
+
+### Consulta o worker por id
+GET http://localhost:1337/adm/worker/2
+Content-Type: application/json
+
+
+### Cria um novo worker
+POST http://localhost:1337/adm/worker/create
+Content-Type: application/json
+
+{
+	"registrations": "D2022.1324.002",
+	"names": "Leonardo Griner",
+	"emails": "leonardo.griner@montador.dell.com",
+	"passwords": "Leonardo123*",
+	"birthdays": "1981-03-05",
+  	"lines": "Dell 24 Video Conferencing Monitor"
+}
+
+
+### Remove um worker 
+DELETE http://localhost:1337/adm/worker/1
+Content-Type: application/json
+
+### Atualiza um worker
+PUT http://localhost:1337/adm/worker/update/13
+Content-Type: application/json
+
+  {
+	"registrations": "D2023.1926.144"
+  }
+
+
+
+//---------------------- ROTAS ENGENHEIROS ----------------------
+
+//Manuals
+
+### Consulta todos os manuals
+GET http://localhost:1337/repositorio/manual/
+Content-Type: application/json
+
+### Consulta o manual por id
+GET http://localhost:1337/repositorio/manual/2
+Content-Type: application/json
+
+
+### Cria um novo manual
+POST http://localhost:1337/repositorio/create/manual
+Content-Type: application/json
+
+{
+	"names": "Mellanox Family of Adapters",
+	"categories": "Infraestrutura",
+	"sub_categories2": "Data Center Infrastructure",
+	"sub_categories1": "Network Adapters",
+  	"sub_categories3": "Mellanox Family of Adapters"
+}
+
+### Remove um manual 
+DELETE http://localhost:1337/repositorio/manual/161
+Content-Type: application/json
+
+### Atualiza um manual
+PUT http://localhost:1337/repositorio/manual/update/
+Content-Type: application/json
+
+{
+	"names": "Auscultadores de Gaming 7.1 510H Alienware"
+
+}
+
+
+
+
+
+//Files
+
+### Consulta todos os files
+GET http://localhost:1337/repositorio/manual/files/
+Content-Type: application/json
+
+### Cria um novo file
+POST http://localhost:1337/repositorio/manual/files/create
+Content-Type: application/json
+
+{
+  	"manuals_id": 27,
+	"names": "Manual do Usuário",
+	"types": "XML",
+  	"url": "https://dl.dell.com/manuals/all-products/esuprt_ser_stor_net/esuprt_pedge_srvr_ethnt_nic/broadcom-netxtreme-adapters_users-guide3_pt-br.pdf"
+}
+
+### Remove um file 
+DELETE http://localhost:1337/repositorio/manual/files/7
+Content-Type: application/json
+
+
+
+//Delegations
+### Consulta todos os delegations
+GET http://localhost:1337/delegations/
+Content-Type: application/json
+
+### Consulta o delegation por id
+GET http://localhost:1337/delegations/2
+Content-Type: application/json
+
+
+### Cria um novo delegation
+POST http://localhost:1337/delegations/create
+Content-Type: application/json
+
+{
+	"engineers_id": "1",
+	"workers_id": "4",
+	"manuals_id": "22"
+}
+
+### Remove um delegation 
+DELETE http://localhost:1337/delegations/1
+Content-Type: application/json
+
+### Atualiza um delegation
+PUT http://localhost:1337/delegations/update/9
+Content-Type: application/json
+
+{
+	"doing": "true"
+}
+
+### Consulta delegations por worker_id
+GET http://localhost:1337/delegations/search/2
+Content-Type: application/json
+
+### Consulta quais delegations estão feitas (Done)
+GET http://localhost:1337/delegations/count-done
+Content-Type: application/json
+
+### Consulta quais delegations estão em fazendo (Doing)
+GET http://localhost:1337/delegations/count-doing
+Content-Type: application/json
+

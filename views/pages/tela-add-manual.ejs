@@ -1,0 +1,49 @@
+<head>
+    <script src="/js/tela-add-manual.js"></script>
+    <title>Adicionar Manual</title>
+    <link rel="icon" href="favicon.ico">
+</head>
+<body class='body-add-manual'>
+    <!-- div do header -->
+    <div id="header">
+        <%- include('../partials/header', { currentPage: currentPage }); %>
+    </div>
+
+    <!-- div que define o grid de 12 -->
+    <div class="campos">
+
+        <!-- div que contem o formulario -->
+        <div id="form-container" class="form-container">
+            <h1 class="titulo-adicionar-manual">Adicionar Manual</h1>
+
+            <!-- form para adicionar o primeiro arquivo -->
+            <form id="form-adicionar-manual" action="/repositorio/create/manual" method="POST">
+
+                <input required id="names" type="text" placeholder="Escreva o nome do manual" name="names">
+                <select id="categories" name="categories" required>
+                    <!-- placeholder -->
+                    <option value=""> Escolha a categoria do manual</option>
+                    
+                    <option value="Computadores">Computadores</option>
+                    <option value="Eletrônicos e Acessórios">Eletrônicos e Acessórios</option>
+                    <option value="Softwares e Soluções">Softwares e Soluções</option>
+                    <option value="Infraestrutura">Infraestrutura</option>
+                </select>
+                
+                <!-- botao que gera mais uma subcategoria -->
+                <button id="adicionar-subcategoria" class="adicionar-div" type="button">Aperte para adicionar uma subcategoria</button>
+                
+                <textarea id="descricao" type="text" placeholder="Adicione aqui uma descrição para o manual" name="update_descriptions"></textarea>
+
+
+                <div id="div-botoes"class="botoes">
+                    <button class="button" id="voltar-repositorio">Voltar</button>
+                    <button class="button" type="submit">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        window.userId = "<%= req.params.userId %>";
+    </script>
+</body>

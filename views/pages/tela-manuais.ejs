@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= manual.names %></title>
+    
+</head>
+
+<body class="body-tela-manuais">
+
+    <div class="header">
+        <%- include('../partials/header'); %>
+    </div>
+
+    <div class="main">
+        <div class="container">
+            <h1 class="title"><%= manual.names %></h1>
+            <% if(manual.update_descriptions) { %>
+                <div class="descricao">
+                    <h2 class="title2">Descrição do Manual</h2>
+                    <div class="update-descriptions"><%= manual.update_descriptions %></div>
+                </div>
+            <% } %>
+            <div class="files" id="div-files">
+                <h2 class="title2" id="title-manuais">Arquivos do Manual</h2>
+            </div>
+            <div class="botao-voltar-finalizar">
+                <button type = "button" class="voltar" id="voltar-kanban">Voltar</button>
+                <button type = "button" class="finalizar" id="finalizar-files">Finalizar</button>
+            </div>
+        </div>
+    </div>
+        <script>
+            window.userId = "<%= req.params.userId %>";
+            window.manualId = "<%= req.params.manualId %>";
+            window.delegationId = "<%= delegation.id %>";
+        </script>
+    </body>
+</html>

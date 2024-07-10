@@ -1,0 +1,36 @@
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="importer.css">
+  
+  </head>   
+<header>
+    <div class="logo">
+      <img src="/images/dell-logo.png" alt="Dell Logo" class="logo-image" />
+      <img src="/images/logo-DellAware.png" alt="DellAware" class="logo-image-DellAware" />      
+    </div>
+    
+    <nav class="navbar">
+      <ul class="paginas">
+        <% if (currentPage !== 'kanban' && currentPage !== 'login' && currentPage !== 'add-file' && currentPage !== 'manual') { %>
+          <a href="/dashboard/<%= req.params.userId %>"><li class="<%= currentPage === 'dashboard' ? 'active' : '' %>">Dashboard</li></a>
+          <a href="/delegacao/<%= req.params.userId %>"><li class="<%= currentPage === 'delegacao' ? 'active' : '' %>">Delegação</li></a>
+          <a href="/repositorio/<%= req.params.userId %>"><li class="<%= currentPage === 'repositorio' ? 'active' : '' %>">Manuais</li></a>
+          <% } %>
+          <% if (currentPage !== 'login' && currentPage !== 'add-file' ) { %>
+            <a onclick="logOut()" class="logout">Logout</a>
+
+          <% } %>
+      </ul>
+      
+    </nav>
+
+    <script>
+      function logOut() {
+        let resposta = confirm("Deseja mesmo sair?")
+        if (resposta) {
+          window.location.href='/logout'
+          window.location.href='/'
+        }
+      }
+    </script>
+  </header>

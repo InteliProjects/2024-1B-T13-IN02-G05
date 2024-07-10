@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+
+</head>
+
+<body class="body-dashboard-eng">
+    <div class="header">
+        <%- include('../partials/header',  { currentPage: currentPage }); %>
+    </div>
+    <main class="main-dashboard-eng">
+        <div class="dashboard">
+            <script src="dashboard-engenheiro.js"></script>
+            <h2 class="titulo-dashboard">Relatório Diário de Desempenho das Leituras de Manuais da Linha de Montagem</h2>
+            <br>
+            <h4 class="titulo-grafico">Leituras Não Iniciadas</h4>
+            <div class="grafico-pendentes"></div>
+            <h4 class="titulo-grafico">Leituras Iniciadas</h4>
+            <div class="grafico-fazendo"></div>
+            <h4 class="titulo-grafico">Leituras Finalizadas</h4>
+            <div class="grafico-feitos"></div>
+        </div>
+        <div class="funcionarios" id="container-funcionarios">
+            <div><p class="funcionarios-title" id="container-funcionarios-title">Funcionários</p></div>
+        </div>
+    </main>
+</body>
+</html>

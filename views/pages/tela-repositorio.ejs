@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repositorio</title>
+</head>
+
+<body class='body-repositorio'>
+    <div class='div-header'>
+        <%- include('../partials/header', { currentPage: currentPage }); %>
+    </div>
+    <main>
+        <div class="sidebar">
+            <label>Categorias</label>
+            <ul>
+                <li><input type="checkbox" value='Computadores'>Computadores</li>
+                <li><input type="checkbox" value="Eletrônicos e Acessórios">Eletrônicos e Acessórios</li>
+                <li><input type="checkbox" value="Softwares e Soluções">Softwares e Soluções</li>
+                <li><input type="checkbox" value="Infraestrutura">Infraestrutura</li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+
+            <div class="content" id="search">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Procurar Manual">
+                </div>
+                <div id='resultsId' class="results">
+                    <!-- Espaço onde os manuais são dispostos -->
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <div class="actions">
+        <button class="back-button" onclick="navigateTo('localhost:1337/tela-engenheiro')">Voltar</button>
+        <a href="/repositorio/create/<%= req.params.userId %>"><button class="create-task-button">Criar Manual</button></a>
+    </div>
+    <script>
+        window.userId = "<%= req.params.userId %>";
+    </script>
+</body>

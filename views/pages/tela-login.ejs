@@ -1,0 +1,50 @@
+<!-- views/login.ejs -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DellAware</title>
+</head>
+<body class="body-login">
+    <div id="header" class="login-header">
+        <%- include('../partials/header', { currentPage: currentPage }); %>
+    </div>
+    
+    <main>
+        <script src="/js/tela-login.js"></script>
+        <div class= "background-login">
+            <div class="login-container">
+                <form id="form" class="login-form" method="POST" action="/login">
+                    <div class="titulo">
+                        <h2 class="titulo-login">Login</h2>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="radio" name="type" value="Engenheiro" checked>
+                            <span class="checkmark"></span>
+                            Engenheiro
+                        </label>
+                        <label>
+                            <input type="radio" name="type" value="Montador">
+                            <span class="checkmark"></span>
+                            Montador
+                        </label>
+                    </div>
+    
+                    <div class="form-group">
+                        <input id="email" type="text" class="username" name="email" placeholder="E-mail:" required>
+                    </div>
+                    <div class="password-group form-group">
+                        <input id="password" type="password" class="password" name="password" placeholder="Senha:" required>
+                        <img src='/icons/view-on.png' id="togglePassword" class="toggle-password">
+                    </div>
+                    <div class="div-botao">
+                        <button id="entrar-login" class="botao" type="submit">Entrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
